@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import gclef from "../assets/images/g-clef.png";
 
 function MeloVibe() {
-  const [position, setPosition] = useState({ x: 680, y: 450 }); // Initial position of the gcledf
+  // Define initial position variables
+  const initialX = window.innerWidth / 2;
+  const initialY = window.innerHeight / 2;
+
+  const [position, setPosition] = useState({ x: initialX, y: initialY }); // Initial position of the gcledf
   const [dragging, setDragging] = useState(false);
   const [meloMood, setMeloMood] = useState("meloMood"); // initial mood (black)
 
@@ -43,59 +47,72 @@ function MeloVibe() {
     }
   };
 
-  console.log(meloMood)
+  console.log(meloMood);
   return (
     <>
       <div
-        className={`h-screen text-primary-text-color-${meloMood} bg-background-color-${meloMood} flex flex-col justify-center pl-20 pr-20`}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
+        className={`text-primary-text-color-${meloMood} bg-background-color-${meloMood} pl-3 sm:pl-0 pr-3 sm:pr-0`}
       >
-        {/* Top Mood */}
-        <div className="flex justify-center">
-          <p className="font-bold text-xl">CHILL</p>
+        {/* Title */}
+        <div className="text-xl sm:text-3xl mt-4 font-bold sm:hidden">
+          <span className="text-primary-text-color-meloMood">Melo</span>
+          <span className="text-primary-color">Vibe</span>
         </div>
 
-        {/* Mood - Middle + Gclef Icon */}
-        <div className="flex justify-between items-center mt-60 mb-60 pt-10 pb-10">
-          {/* Left Mood */}
-          <p className="font-bold text-xl">ENERGETIC</p>
-
-          {/* Drag g-clef */}
-          <div className="flex flex-col items-center">
-            {/*Title - Center Middle */}
-            <div className="flex justify-center font-bold text-4xl">
-              <span className="mx-1">Explore</span>
-              <span className="text-primary-color mx-1">music </span>
-              <span>that matches your </span>
-              <span className="text-primary-color mx-1">vibe.</span>
-            </div>
-            {/* Instruction */}
-            <p className="text-xl mt-2">DRAG THE G-CLEF TO SET THE MOOD</p>
-            {/* Image at the center */}
-            <div
-              style={{
-                position: "absolute",
-                left: position.x,
-                top: position.y,
-              }}
-              onMouseDown={handleMouseDown}
-            >
-              <img
-                src={gclef}
-                alt="SecondPage"
-                className="w-20 h-20 rounded-full"
-              />
-            </div>
+        <div
+          className={`min-h-screen flex flex-col justify-center md:pl-20 md:pr-20`}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+        >
+          {/* Top Mood */}
+          <div className="flex justify-center">
+            <p className="font-bold text-xl pl-10 sm:pl-0">CHILL</p>
           </div>
 
-          {/* Right Mood */}
-          <p className="font-bold text-xl">UPBEAT</p>
-        </div>
+          {/* Mood - Middle + Gclef Icon */}
+          <div className="flex justify-between items-center mt-20 mb-20 md:mt-60 md:mb-60">
+            {/* Left Mood */}
+            <p className="font-bold text-xl">ENERGETIC</p>
 
-        {/* Bottom mood */}
-        <div className="flex justify-center">
-          <p className="font-bold text-xl">RELAXING</p>
+            {/* Drag g-clef */}
+            <div className="flex flex-col items-center">
+              {/*Title - Center Middle */}
+              <div className="font-bold text-4xl hidden md:block">
+                <span className="mx-1">Explore</span>
+                <span className="text-primary-color mx-1">music </span>
+                <span>that matches your </span>
+                <span className="text-primary-color mx-1">vibe.</span>
+              </div>
+              {/* Instruction */}
+              <p className="text-left text-xl hidden sm:block">
+                DRAG THE G-CLEF TO SET THE MOOD
+              </p>
+              <p className="text-center text-sm sm:hidden">DRAG THE G-CLEF</p>
+              {/* Image at the center */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: position.x,
+                  top: position.y,
+                }}
+                onMouseDown={handleMouseDown}
+              >
+                <img
+                  src={gclef}
+                  alt="SecondPage"
+                  className="w-10 h-10 sm:w-20 sm:h-20 rounded-full mt-20 sm:mt-10"
+                />
+              </div>
+            </div>
+
+            {/* Right Mood */}
+            <p className="font-bold text-xl">UPBEAT</p>
+          </div>
+
+          {/* Bottom mood */}
+          <div className="flex justify-center">
+            <p className="font-bold text-xl pl-8 sm:pl-0">RELAXING</p>
+          </div>
         </div>
       </div>
     </>
