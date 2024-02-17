@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 import { createBrowserRouter } from "react-router-dom";
 
-import MeloVibePage from "./pages/Melovibe";
+
 
 const router = createBrowserRouter([
   {
@@ -11,6 +11,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/melovibe",
         element: <MeloVibePage />,
       },
      
