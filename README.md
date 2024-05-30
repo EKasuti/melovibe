@@ -4,7 +4,10 @@
 
 - **Author:** Emmanuel Kasuti
 - **Purpose:** The purpose of this project generate music playlist based on the users mood.
-- **Timeline:** February 12 - February 18th
+
+## About
+
+MeloVibe is your personalized mood-based music companion. Seamlessly matching your vibe, MeloVibe crafts curated playlists tailored to your current mood, whether you're feeling upbeat, chill, energetic, or relaxed. Simply drag the gclef to your mood, and let MeloVibe set the perfect musical backdrop for your moment. With MeloVibe, discover the power of music to enhance every mood
 
 ## Running the Project
 
