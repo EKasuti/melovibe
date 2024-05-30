@@ -15,8 +15,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/melovibe" element={<MeloVibePage/>} />
-
-  
+        
       </Routes>
      
     </div>

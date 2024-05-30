@@ -4,6 +4,7 @@ import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
 function LandingPage() {
+  
   return (
     <>
       <div className="pl-4 sm:pl-8 md:pl-20 pr-4 sm:pr-8 md:pr-20 bg-background-color-meloMood min-h-screen flex flex-col justify-center overflow-y-auto">
@@ -12,7 +13,7 @@ function LandingPage() {
           <span className="text-primary-text-color-meloMood">Melo</span>
           <span className="text-primary-color">Vibe</span>
         </div>
-
+``
         {/* Body */}
 
         {/* Landing screen */}
