@@ -36,6 +36,7 @@ function MeloVibe() {
   const calculateMood = (x, y) => {
     if (y < 150) {
       setMeloMood("chill");
+
     } else if (y > 700) {
       setMeloMood("relaxing");
     } else if (x > 900) {
@@ -46,12 +47,21 @@ function MeloVibe() {
       setMeloMood("meloMood");
     }
   };
+  const getMoodColorClasses = (mood) => {
+    switch (mood) {
+      case "chill": return "text-primary-text-color-chill bg-background-color-chill";
+      case "relaxing": return "text-primary-text-color-relaxing bg-background-color-relaxing";
+      case "upbeat": return "text-primary-text-color-upbeat bg-background-color-upbeat";
+      case "energetic": return "text-primary-text-color-energetic bg-background-color-energetic";
+      default: return "text-primary-text-color-meloMood bg-background-color-meloMood"; 
+    }
+  };
 
   console.log(meloMood);
   return (
     <>
       <div
-        className={`text-primary-text-color-${meloMood} bg-background-color-${meloMood} pl-3 sm:pl-0 pr-3 sm:pr-0`}
+        className={`${getMoodColorClasses(meloMood)} pl-3 sm:pl-0 pr-3 sm:pr-0`}
       >
         {/* Title */}
         <div className="text-xl sm:text-3xl mt-4 font-bold sm:hidden">
